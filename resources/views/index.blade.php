@@ -35,7 +35,7 @@
                         <a href="{{url("books/$book->id")}}">
                             <button class="btn btn-dark">VIEW</button>
                         </a>
-                        <a href="">
+                        <a href="{{url("books/$book->id/edit")}}">
                             <button class="btn btn-primary">EDIT</button>
                         </a>
                         <a href="">

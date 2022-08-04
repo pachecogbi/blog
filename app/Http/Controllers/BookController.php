@@ -81,7 +81,9 @@ class BookController extends Controller
      */
     public function edit($id)
     {
-        //
+        $book = ModelBook::find($id);
+        $users = User::all();
+        return view('create', compact('book', 'users'));
     }
 
     /**
@@ -93,7 +95,14 @@ class BookController extends Controller
      */
     public function update(BookRequest $request, $id)
     {
-        //
+        ModelBook::where(['id'=> $id])->update([
+            'title'=>$request->title,
+            'pages'=>$request->pages,
+            'price'=>$request->price,
+            'id_user'=>$request->id_user
+        ]);
+
+        return redirect('books');
     }
 
     /**
