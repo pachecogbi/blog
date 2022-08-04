@@ -113,6 +113,7 @@ class BookController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $del=ModelBook::destroy($id);
+        return redirect ('books');
     }
 }
