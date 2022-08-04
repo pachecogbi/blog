@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\ModelBook; // Model adicionado
 use App\Models\User; // Model adicionado
-use Illuminate\Http\Request;
+
+use App\Http\Requests\BookRequest;
 
 class BookController extends Controller
 {
@@ -45,7 +46,7 @@ class BookController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BookRequest $request)
     {
         $cad = ModelBook::create([
             'title'=>$request->title,
@@ -90,7 +91,7 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(BookRequest $request, $id)
     {
         //
     }
